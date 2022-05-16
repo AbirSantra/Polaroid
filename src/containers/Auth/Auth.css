@@ -1,0 +1,88 @@
+.auth-container{
+    width: 100%;
+    background-color: var(--light);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    gap: 2rem;
+}
+
+.lock-icon{
+    font-size: 3rem;
+    color: var(--main-blue);
+}
+
+.auth-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.auth-form{
+    width: 100%;
+    max-width: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.password-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.show-password{
+    font-size: 1.4rem;
+    color: var(--inactive);
+    cursor: pointer;
+}
+
+.show-password-active{
+    color: var(--main-blue);
+}
+
+.form-input{
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: none;
+    outline: none;
+    border: 1px solid var(--inactive);
+    border-radius: 0.5rem;
+}
+
+.form-input:focus{
+    border: 2px solid var(--main-blue);
+}
+
+.signin-btn{
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.switch-btn{
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--inactive);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.25s ease-in-out;
+}
+
+.switch-btn:hover{
+    color: var(--main-blue);
+    transition: all 0.25s ease-in-out;
+}
