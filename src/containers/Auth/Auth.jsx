@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { signin, signup } from "../../actions/auth";
 import jwt_decode from "jwt-decode";
 
-require("dotenv").config();
+// require("dotenv").config();
 const initialState = {
     firstName: "",
     lastName: "",
@@ -164,7 +164,9 @@ const Auth = () => {
                 {/* <div className="divider"></div> */}
                 <div>or</div>
                 <div className="google-login">
-                    <GoogleOAuthProvider clientId="519245500733-i9g1u4l11a68rlet59r6o7m8fa0pvvc6.apps.googleusercontent.com">
+                    <GoogleOAuthProvider
+                        clientId={process.env.REACT_APP_GOOGLE_ID}
+                    >
                         <GoogleLogin
                             onSuccess={googleSuccess}
                             onError={googleFailure}
