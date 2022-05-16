@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { signin, signup } from "../../actions/auth";
 import jwt_decode from "jwt-decode";
 
+require("dotenv").config();
 const initialState = {
     firstName: "",
     lastName: "",
