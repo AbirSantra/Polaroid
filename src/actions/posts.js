@@ -10,6 +10,8 @@ import {
     FETCH_POST,
     START_LOADING,
     END_LOADING,
+    CMT_START_LOADING,
+    CMT_END_LOADING,
     COMMENT,
 } from "../constants/actionTypes";
 
@@ -79,8 +81,10 @@ export const likePost = (id) => async (dispatch) => {
 
 export const commentPost = (value, id) => async (dispatch) => {
     try {
+        dispatch({ type: CMT_START_LOADING });
         const { data } = await api.comment(value, id);
         dispatch({ type: COMMENT, payload: data });
+        dispatch({ type: CMT_END_LOADING });
         return data.comments;
     } catch (error) {
         console.log(error);

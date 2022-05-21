@@ -122,21 +122,6 @@ const Form = ({ currentID, setCurrentID }) => {
                         />
                     </div>
                     <div className="form-input-container">
-                        <div className="form-input-label">Tags</div>
-                        <input
-                            type="text"
-                            className="form-input-field"
-                            placeholder="Enter comma-separated words"
-                            value={postData.tags}
-                            onChange={(e) =>
-                                setPostData({
-                                    ...postData,
-                                    tags: e.target.value.split(","),
-                                })
-                            }
-                        />
-                    </div>
-                    <div className="form-input-container">
                         <div className="form-input-label">
                             Upload your Polaroid
                         </div>
@@ -154,6 +139,22 @@ const Form = ({ currentID, setCurrentID }) => {
                             ></FileBase>
                         </div>
                     </div>
+                    <div className="form-input-container">
+                        <div className="form-input-label">Tags</div>
+                        <input
+                            type="text"
+                            className="form-input-field"
+                            placeholder="Enter comma-separated words"
+                            value={postData.tags}
+                            onChange={(e) =>
+                                setPostData({
+                                    ...postData,
+                                    tags: e.target.value.split(","),
+                                })
+                            }
+                        />
+                    </div>
+
                     <button type="submit" className="post-submit-btn">
                         {currentID
                             ? "Update your Polaroid"

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./PostDetails.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { commentPost } from "../../actions/posts";
+import Loading from "../../img/cmt-loading.svg";
 
 const Comments = ({ post }) => {
     const dispatch = useDispatch();
+    const { cmtLoading } = useSelector((state) => state.posts);
     const user = JSON.parse(localStorage.getItem("profile"));
     const [comments, setComments] = useState(post?.comments);
     const [comment, setComment] = useState("");
@@ -16,7 +18,7 @@ const Comments = ({ post }) => {
         setComment("");
         setComments(newComments);
     };
-
+    // console.log(cmtLoading);
     return (
         <div className="comments">
             <div className="comments-header">Comments</div>
@@ -31,10 +33,18 @@ const Comments = ({ post }) => {
                     />
                     <button
                         className="cmt-submit-btn"
-                        disabled={!comment}
+                        disabled={!comment || cmtLoading}
                         onClick={handleClick}
                     >
-                        <FontAwesomeIcon icon={faPaperPlane} />
+                        {cmtLoading ? (
+                            <img
+                                src={Loading}
+                                alt="comment loading"
+                                className="cmt-loading-img"
+                            />
+                        ) : (
+                            <FontAwesomeIcon icon={faPaperPlane} />
+                        )}
                     </button>
                 </div>
             )}

@@ -2,14 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
 }
 
 .up-container{
     flex: 1;
     position: sticky;
-    top: 2rem;
+    top: 7rem;
 }
 
 .p-container{

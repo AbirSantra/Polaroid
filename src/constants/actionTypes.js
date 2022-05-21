@@ -11,4 +11,6 @@ export const LOGOUT = "LOGOUT";
 export const AUTH = "AUTH";
 export const START_LOADING = "START_LOADING";
 export const END_LOADING = "END_LOADING";
+export const CMT_START_LOADING = "CMT_START_LOADING";
+export const CMT_END_LOADING = "CMT_END_LOADING";
 export const COMMENT = "COMMENT";

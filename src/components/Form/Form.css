@@ -93,11 +93,11 @@
 
 input[type=file]::file-selector-button{
     font-size: 0.9rem;
-    font-weight: 300;
+    font-weight: 400;
     font-family: 'Poppins',sans-serif;
     border: none;
     background-color: var(--light);
-    border: 1.5px solid var(--main-blue);
+    border: 2px solid var(--main-blue);
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
     margin-right: 1rem;
@@ -107,7 +107,7 @@ input[type=file]::file-selector-button{
 
 input[type=file]::file-selector-button:hover{
     background-color: var(--main-blue);
-    border: 1.5px solid var(--main-blue);
+    border: 2px solid var(--main-blue);
     color: var(--light);
     transition: all 0.25s ease-in-out;
 }
@@ -121,7 +121,7 @@ input[type=file]::file-selector-button:hover{
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 400;
     cursor: pointer;
     transition: all 0.25s ease;
 }

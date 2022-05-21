@@ -12,14 +12,23 @@ import {
     END_LOADING,
     FETCH_POST,
     COMMENT,
+    CMT_START_LOADING,
+    CMT_END_LOADING,
 } from "../constants/actionTypes";
 
-const reducer = (state = { isLoading: true, posts: [] }, action) => {
+const reducer = (
+    state = { isLoading: true, posts: [], cmtLoading: false },
+    action
+) => {
     switch (action.type) {
         case START_LOADING:
             return { ...state, isLoading: true };
         case END_LOADING:
             return { ...state, isLoading: false };
+        case CMT_START_LOADING:
+            return { ...state, cmtLoading: true };
+        case CMT_END_LOADING:
+            return { ...state, cmtLoading: false };
         case FETCH_ALL:
             return { ...state, posts: action.payload };
         case FETCH_POST:

@@ -171,10 +171,17 @@
     margin: 0 0.5rem;
     cursor: pointer;
     color: var(--main-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cmt-submit-btn:hover{
     color: var(--main-blue-dark);
+}
+
+.cmt-loading-img{
+    width: 1rem;
 }
 
 @media screen and (max-width:1024px){
