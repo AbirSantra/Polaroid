@@ -3,10 +3,7 @@ import React from "react";
 
 const Saved = () => {
     return (
-        <div>
-            Saved posts feature will be added very soon! All your saved posts
-            will appear here.
-        </div>
+        <div style={{ textAlign: "center" }}>This feature is coming soon!</div>
     );
 };
 

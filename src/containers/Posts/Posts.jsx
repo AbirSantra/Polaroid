@@ -20,6 +20,10 @@ const Posts = ({ setCurrentID }) => {
     return isLoading ? (
         <div className="loading">
             <img src={Spinner} alt="loading-spinner" />
+            <p className="loading-text">
+                Please wait... This app is built using a free server resulting
+                in increased loading times.
+            </p>
         </div>
     ) : (
         <div className="posts-container">

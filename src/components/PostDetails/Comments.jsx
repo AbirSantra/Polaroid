@@ -49,6 +49,12 @@ const Comments = ({ post }) => {
                 </div>
             )}
             {/* <div className="divider"></div> */}
+            {cmtLoading && (
+                <p className="loading-text">
+                    Please wait... This app is built using a free server
+                    resulting in increased loading times.
+                </p>
+            )}
             <div className="comments-container">
                 {comments.map((com, i) => (
                     <div className="comment" key={i}>

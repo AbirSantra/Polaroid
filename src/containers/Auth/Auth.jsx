@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./Auth.css";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouseLock, faEye } from "@fortawesome/free-solid-svg-icons";
+import PolaroidLogo from "../../img/polaroid (1).png";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signin, signup } from "../../actions/auth";
@@ -76,14 +77,14 @@ const Auth = () => {
 
     return (
         <div className="auth-container">
-            <FontAwesomeIcon
-                icon={faHouseLock}
-                className="lock-icon"
-            ></FontAwesomeIcon>
+            <div to="/posts" className="logo">
+                <img src={PolaroidLogo} alt="Polaroid-Logo" />
+                <h1 className="logo-text">Polaroid</h1>
+            </div>
             <div className="auth-title">
                 {isSignUp
-                    ? "Welcome to Polaroid! Sign Up."
-                    : "Welcome Back! Sign in."}
+                    ? "Welcome to Polaroid! Sign Up to see polaroids from your friends."
+                    : "Welcome Back! Sign in to connect with your friends."}
             </div>
             <form onSubmit={handleSubmit} className="auth-form">
                 {isSignUp && (
@@ -161,8 +162,7 @@ const Auth = () => {
                             : "New here? Create a new account."}
                     </button>
                 </div>
-                {/* <div className="divider"></div> */}
-                <div>or</div>
+                <div className="divider">or</div>
                 <div className="google-login">
                     <GoogleOAuthProvider
                         clientId={process.env.REACT_APP_GOOGLE_ID}

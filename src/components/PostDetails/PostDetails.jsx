@@ -34,6 +34,10 @@ const PostDetails = () => {
                 <div className="postdetails-container">
                     <div className="loading">
                         <img src={Spinner} alt="loading-spinner" />
+                        <p className="loading-text">
+                            Please wait... This app is built using a free server
+                            resulting in increased loading times.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -48,6 +52,10 @@ const PostDetails = () => {
                 <div className="postdetails-container">
                     <div className="loading">
                         <img src={Spinner} alt="loading-spinner" />
+                        <p className="loading-text">
+                            Please wait... This app is built using a free server
+                            resulting in increased loading times.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -56,10 +64,13 @@ const PostDetails = () => {
 
     return (
         <div className="postdetails">
-            <div className="post-close-btn" onClick={handleClose}>
-                <FontAwesomeIcon icon={faClose}></FontAwesomeIcon>
-            </div>
             <div className="postdetails-container">
+                <div className="post-close-btn" onClick={handleClose}>
+                    <FontAwesomeIcon
+                        icon={faClose}
+                        className="post-close-icon"
+                    ></FontAwesomeIcon>
+                </div>
                 <div className="post-img-container">
                     <img src={post.selectedFile} alt="post_image" />
                 </div>

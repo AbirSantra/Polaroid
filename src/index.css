@@ -80,10 +80,7 @@ body{
 }
 
 .divider{
-    display: inline-block;
-    height: 1px;
-    width: 100%;
-    background-color: var(--inactive);
+    color: var(--inactive);
     
 }
 

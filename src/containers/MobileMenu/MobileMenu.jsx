@@ -7,15 +7,17 @@ import {
     faBookmark,
     faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { showForm } from "../../actions/form";
 
 const MobileMenu = () => {
     const formState = useSelector((state) => state.form);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleOpen = () => {
+        navigate("/posts");
         dispatch(showForm());
     };
     return (

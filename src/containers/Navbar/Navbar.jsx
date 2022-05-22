@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
-import PolaroidLogo from "../../img/Logo.png";
+import PolaroidLogo from "../../img/polaroid (1).png";
 import UserLogo from "../../img/user.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
@@ -37,8 +37,9 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="containers navbar-content">
-                <Link to="/" className="logo">
+                <Link to="/posts" className="logo">
                     <img src={PolaroidLogo} alt="Polaroid-Logo" />
+                    <h1 className="logo-text">Polaroid</h1>
                 </Link>
                 {/* <div className="navbar-searchbar">
                     <input
