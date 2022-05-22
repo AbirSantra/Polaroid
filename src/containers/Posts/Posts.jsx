@@ -21,8 +21,8 @@ const Posts = ({ setCurrentID }) => {
         <div className="loading">
             <img src={Spinner} alt="loading-spinner" />
             <p className="loading-text">
-                Please wait... This app is built using a free server resulting
-                in increased loading times.
+                Please wait... This app is using a free server resulting in
+                increased loading times.
             </p>
         </div>
     ) : (

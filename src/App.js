@@ -33,9 +33,10 @@ function App() {
                                 path="/posts"
                                 element={<HomePage></HomePage>}
                             ></Route>
+                            <Route path="/auth" element={<Auth />}></Route>
                             <Route
                                 path="/"
-                                element={<Navigate to="/posts"></Navigate>}
+                                element={<Navigate to="/auth"></Navigate>}
                             ></Route>
                             <Route
                                 path="/posts/:id"
@@ -49,7 +50,6 @@ function App() {
                                 path="/account"
                                 element={<Account></Account>}
                             ></Route>
-                            <Route path="/auth" element={<Auth />}></Route>
                         </Routes>
                     </div>
                 </div>

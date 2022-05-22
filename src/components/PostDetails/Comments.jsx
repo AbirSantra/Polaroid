@@ -51,8 +51,8 @@ const Comments = ({ post }) => {
             {/* <div className="divider"></div> */}
             {cmtLoading && (
                 <p className="loading-text">
-                    Please wait... This app is built using a free server
-                    resulting in increased loading times.
+                    Please wait... This app is using a free server resulting in
+                    increased loading times.
                 </p>
             )}
             <div className="comments-container">
