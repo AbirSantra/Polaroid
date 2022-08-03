@@ -9,39 +9,37 @@ import { useDispatch } from "react-redux";
 import decode from "jwt-decode";
 
 const Navbar = () => {
-    const [user, setUser] = useState(
-        JSON.parse(localStorage.getItem("profile"))
-    );
-    // console.log(user);
-    const location = useLocation();
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const logout = () => {
-        dispatch({ type: "LOGOUT" });
-        setUser(null);
-        navigate("/");
-    };
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  // console.log(user);
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const logout = () => {
+    dispatch({ type: "LOGOUT" });
+    setUser(null);
+    navigate("/");
+  };
 
-    useEffect(() => {
-        const token = user?.token;
-        if (token) {
-            const decodedToken = decode(token);
+  useEffect(() => {
+    const token = user?.token;
+    if (token) {
+      const decodedToken = decode(token);
 
-            if (decodedToken.exp * 1000 < new Date().getTime()) logout();
-        }
+      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+    }
 
-        setUser(JSON.parse(localStorage.getItem("profile")));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [location]);
+    setUser(JSON.parse(localStorage.getItem("profile")));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location]);
 
-    return (
-        <div className="navbar">
-            <div className="containers navbar-content">
-                <Link to="/posts" className="logo">
-                    <img src={PolaroidLogo} alt="Polaroid-Logo" />
-                    <h1 className="logo-text">Polaroid</h1>
-                </Link>
-                {/* <div className="navbar-searchbar">
+  return (
+    <div className="navbar">
+      <div className="containers navbar-content">
+        <Link to="/" className="logo">
+          <img src={PolaroidLogo} alt="Polaroid-Logo" />
+          <h1 className="logo-text">Polaroid</h1>
+        </Link>
+        {/* <div className="navbar-searchbar">
                     <input
                         type="text"
                         className="search-input"
@@ -53,40 +51,40 @@ const Navbar = () => {
                         ></FontAwesomeIcon>
                     </button>
                 </div> */}
-                <div className="toolbar">
-                    {user ? (
-                        <div className="profile">
-                            {user.result.imageUrl ? (
-                                <img
-                                    src={user.result.imageUrl}
-                                    alt={user.result.name}
-                                    className="profile-img"
-                                ></img>
-                            ) : (
-                                <img
-                                    src={UserLogo}
-                                    alt={user.result.name}
-                                    className="profile-img"
-                                />
-                            )}
-                            {/* <div className="profile-name">
+        <div className="toolbar">
+          {user ? (
+            <div className="profile">
+              {user.result.imageUrl ? (
+                <img
+                  src={user.result.imageUrl}
+                  alt={user.result.name}
+                  className="profile-img"
+                ></img>
+              ) : (
+                <img
+                  src={UserLogo}
+                  alt={user.result.name}
+                  className="profile-img"
+                />
+              )}
+              {/* <div className="profile-name">
                                 {user.result.username.split(" ")[0]}
                             </div> */}
-                            <FontAwesomeIcon
-                                icon={faRightFromBracket}
-                                className="logout-btn"
-                                onClick={logout}
-                            ></FontAwesomeIcon>
-                        </div>
-                    ) : (
-                        <Link to="/auth" className="main-btn login-btn">
-                            Log in
-                        </Link>
-                    )}
-                </div>
+              <FontAwesomeIcon
+                icon={faRightFromBracket}
+                className="logout-btn"
+                onClick={logout}
+              ></FontAwesomeIcon>
             </div>
+          ) : (
+            <Link to="/auth" className="main-btn login-btn">
+              Log in
+            </Link>
+          )}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;
