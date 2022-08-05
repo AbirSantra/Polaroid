@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# Polaroid - Social Media Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Polaroid is a simple social media web application having CRUD functionalities.
+(An advanced version of Polaroid is currently under development. See [here](https://github.com/AbirSantra/PolaroidApp) )
 
-## Available Scripts
+<p align="center">
+<a href="https://polaroidapp.netlify.com">
+<img src="./src/img/Logo.png" alt="Polaroid-logo"/>
+</a>
+</p>
 
-In the project directory, you can run:
+<br/>
 
-### `npm start`
+## Goal of this project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The main purpose behind this project was to learn :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Dividing the webpage into individual separate components
+- Managing the global state of a complex application (Redux)
+- Connecting the backend API with CRUD functionalities to a database (MongoDB)
+- Authenticating users, hashing passwords(bcryptJS) and generating access tokens (JWT)
+- Connecting the frontend and the backend together
 
-### `npm test`
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features and Interfaces
 
-### `npm run build`
+1. Authentication Page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   - The user is first greeted with the login screen. If he/she had manually created their account then they will have to login using username and password. If they had signed up using Google then they can login using Google
+     ![Login Screen](./images/login%20screen.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   - If the user is a first time visitor, they can create their account or signup using Google
+     ![Signup Screen](./images/sign%20up%20screen.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br/>
 
-### `npm run eject`
+2. Homepage
+   - The homepage shows all the posts of all the users on the left section and the menu on the right section.
+   - The navbar has the logout button.
+     ![HomePage 1](./images/Home%201.png)
+     ![HomePage 2](./images/home%202.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Menu
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   - `Home` : Takes the user to the homepage if the user is logged in. If the user is not logged in or login token has expired, the user is taken to the authentication page when they click on the `Home` button
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   - `Create a polaroid` : Opens up a modal for the user to upload a post.
+     ![Create a modal](./images/create%20modal.png)
 
-## Learn More
+<br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Post
+   - The top section has the username and the edit and delete icons (only for the posts created by the user)
+     <br/>
+     ![postcard](./images/post%20card.png)
+   - The edit button opens up the modal with the previous data already populated.
+     <br/>
+     ![edit modal](./images/edit%20modal.png)
+   - The delete button simply deletes that post
+   - The bottom section of the post contains the like button and the comment button.
+   - Clicking on the post opens up the post page. Users can comment here.
+     ![postpage](./images/postpage.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br/>
 
-### Code Splitting
+## Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Frontend:
+  1. `React` - Styling
+  2. `Redux` - State management
+  3. `Netlify` - Hosting frontend
 
-### Analyzing the Bundle Size
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Backend:
+  1. `Node and Express` - Server and API
+  2. `Google OAuth` - Google sign in
+  3. `MongoDB and Mongoose` - Database for storing user information and posts
+  4. `Heroku` - Hosting backend
 
-### Making a Progressive Web App
+## Environment Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone the frontend repository using `git clone https://github.com/AbirSantra/Polaroid.git`
+2. Install all the node dependencies `npm install`
+3. Clone the backend repository using `git clone https://github.com/AbirSantra/PolServer.git`
+4. Replace Google OAuth ID and MongoDB Atlas keys with your configurations
+5. Replace axios `baseURL` in frontend > src > api > index.js with `http://localhost:5000/`
+6. Run `npm start` in the backend directory to start the backend server at `http://localhost:5000`
+7. Run `npm start` in the frontend directory to start the frontend server at `http://localhost:3000/`
+8. Be sure to start the backend before the frontend.
