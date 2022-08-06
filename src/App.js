@@ -37,8 +37,6 @@ function App() {
           {/* <div className="userPanel">{<UserPanel></UserPanel>}</div> */}
           <div className="pages containers">
             <Routes>
-              <Route path="/posts" element={<HomePage></HomePage>}></Route>
-              <Route path="/auth" element={<Auth />}></Route>
               <Route
                 path="/"
                 element={
@@ -49,6 +47,8 @@ function App() {
                   )
                 }
               ></Route>
+              <Route path="/posts" element={<HomePage></HomePage>}></Route>
+              <Route path="/auth" element={<Auth />}></Route>
               <Route
                 path="/posts/:id"
                 element={<PostDetails></PostDetails>}
